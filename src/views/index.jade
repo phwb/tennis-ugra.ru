@@ -5,7 +5,7 @@ block content
     .wrapper
       .logo
         a.logo__link(href="#")
-  section.schedule
+  section.section.schedule
     .wrapper
       h1.title
         span.title-line Первенство
@@ -37,15 +37,95 @@ block content
                 a.grid__link(href='#')= val
       .feb-schedule
         a.button(href='#') РАСПИСАНИЕ НА 25 ФЕВРАЛЯ
-  script(src="./js/jquery-2.2.0.js")
-  script(src="./js/jquery.pixlayout.js")
+  section.section.news
+    .wrapper.wrapper_news
+      h2.caption новости
+      .news-list
+        .news-item
+          img.news__image(src='images/content/img1.png')
+          .news-content
+            .news__date 20.01.2016
+            .news__title
+              a(href='#') Прошел первый день турнира
+            .news__text
+              | Задача организации, в особенности же постоянный количественный рост и сфера нашей
+              | активности требуют от нас анализа системы обучения кадров.
+        .news-item
+          .news-content
+            .news__date 20.01.2016
+            .news__title
+              a(href='#') Прошло открытие Первенства ХМАО-Югры 2016
+            .news__text
+              | Задача организации, в особенности же постоянный количественный рост и сфера нашей
+              | активности требуют от нас анализа системы обучения кадров.
+        .news-item
+          .news-content
+            .news__date 20.01.2016
+            .news__title
+              a(href='#') Второй день турнира окончен. Игры были интересными. Ждем третий.
+      .news-more
+        a.button.button_white(href='#') ЗАГРУЗИТЬ ЕЩЕ
+  section.section.gallery
+    .wrapper
+  section.section.contacts
+    #map.map
+    .place
+      .place-wrapper
+        .place__title
+          | Место
+          br
+          | проведения
+        .place__address
+          b
+            | Ханты-Мансийск,
+            br
+            | ул. Студенческая, 21,
+        .place__text
+          | Центр развития
+          br
+          | теннисного спорта
+  section.section.partners
+    .wrapper
+      h2.caption.caption_partners ПАРТНЕРЫ ФЕДЕРАЦИИ
+      .partners-list
+        each val in [1, 2, 3, 4, 5]
+          a.partners__link(href='#')
+            img.partners__image(src='images/content/p' + val + '.png')
+  footer.section.footer
+    .wrapper.wrapper_footer
+      .footer__left
+        p.footer__company
+          | © 2016 Региональная Спортивная Общественная Организация
+          br
+          | «Федерация тенниса Ханты-Мансийского автономного округа – Югры»
+        p
+          | Адрес: Ханты-Мансийский автономный округ – Югра,
+          br
+          | г. Ханты-Мансийск, ул. Студенческая 21
+        p
+          b Телефон:
+          = ' '
+          a.footer__link(href='#') 8 (3463) 33-32-13
+        p
+          b Эл. почта:
+          = ' '
+          a.footer__link(href='#') tennis@mail.ru
+      .footer__right
+        p
+          | Разработка и поддержка —
+          br
+          a.footer__link(href='//ugraweb.ru', target='_blank') Югорские Интернет Решения
+  script(src="https://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU")
   script.
-    $(function() {
-      $.pixlayout({
-        src: "images/layout.jpg",
-        center: true,
-        clip: true,
-        show: true,
-        mini: true
+    /* global ymaps */
+    /** @property {Function} ymaps.Map */
+    (function () {
+      'use strict';
+      ymaps.ready(function () {
+        new ymaps.Map("map", {
+          center: [61.014456, 69.025711],
+          zoom: 16
+        });
       });
-    });
+    } ());
+  script(src="./js/jquery-2.2.0.js")
