@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  header.header
+    .wrapper
+      .logo
+        a.logo__link(href="#")
+  section.schedule
+    .wrapper
+      h1.title
+        span Первенство
+        br
+        | ХМАО-Югры 2016
+  script(src="./js/jquery-2.2.0.js")
+  script(src="./js/jquery.pixlayout.js")
+  script.
+    $(function() {
+      $.pixlayout({
+        src: "images/layout.jpg",
+        center: true,
+        clip: true,
+        show: true,
+        mini: true
+      });
+    });

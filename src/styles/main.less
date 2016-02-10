@@ -1,0 +1,47 @@
+@import (inline) "normalize.css/normalize.css";
+
+body {
+  background-color: azure;
+}
+.wrapper {
+  width: 990px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.header {
+  height: 139px;
+  padding-top: 1px;
+}
+.logo {
+  width: 179px;
+  height: 80px;
+  margin-top: 17px;
+}
+.logo__link {
+  display: block;
+  width: 179px;
+  height: 80px;
+  background: url("../images/logo.png") no-repeat;
+}
+.schedule {
+  height: 710px;
+  position: relative;
+}
+.schedule:before {
+  content: '';
+  width: 100%;
+  height: 850px;
+  background: #33c273;
+  transform: skewY(-5.7deg);
+  position: absolute;
+  top: -70px;
+}
+.title {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 70px;
+  span {
+    font-size: 35px;
+  }
+}
