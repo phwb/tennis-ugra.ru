@@ -8,9 +8,35 @@ block content
   section.schedule
     .wrapper
       h1.title
-        span Первенство
+        span.title-line Первенство
         br
         | ХМАО-Югры 2016
+      .date
+        .date__title Дата проведения:
+        .date__date 13–20 февраля
+      .list
+        .list__item
+          b Возрастные категории:
+          |  9-10 лет, 15 лет и моложе, 17 лет и моложе.
+        .list__item
+          b Место проведения:
+          |  г. Ханты-Мансийск, Центр развития теннисного спорта
+        .list__item
+          b Телефон для справок:
+          |  8 (3467) 33-33-33
+      .grid-title Сетки турнира:
+      .grid
+        table.grid-table
+          tr
+            each val in ['Девочки 9-10 лет', 'Девушки 15 лет и моложе', 'Девушки 17 лет и моложе', 'Микст до 17 лет']
+              td
+                a.grid__link(href='#')= val
+          tr
+            each val in ['юноши 9-10 лет', 'юноши 15 лет и моложе', 'юноши 17 лет и моложе', 'Микст до 17 лет']
+              td
+                a.grid__link(href='#')= val
+      .feb-schedule
+        a.button(href='#') РАСПИСАНИЕ НА 25 ФЕВРАЛЯ
   script(src="./js/jquery-2.2.0.js")
   script(src="./js/jquery.pixlayout.js")
   script.

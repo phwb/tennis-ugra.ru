@@ -17,14 +17,14 @@ gulp.task('styles', function() {
   ];
   return gulp.src('src/**/*.less')
     .pipe($.less({
-      paths: ['bower_components']
-    })
-    .on('error', $.util.log))
+        paths: ['bower_components']
+      })
+      .on('error', $.util.log))
     .pipe($.postcss([
-        require('autoprefixer-core')({
-          browsers: browsers
-        })
-      ]))
+      require('autoprefixer-core')({
+        browsers: browsers
+      })
+    ]))
     .pipe(gulp.dest('build'))
     .pipe(browserSync.reload({stream: true}));
 });
@@ -55,8 +55,13 @@ gulp.task('images', function() {
 });
 
 gulp.task('js', function () {
-    return gulp.src('src/js/*.js')
-        .pipe(gulp.dest('build/js'));
+  return gulp.src('src/js/*.js')
+    .pipe(gulp.dest('build/js'));
+});
+
+gulp.task('fonts', function () {
+  return gulp.src('src/fonts/**/*')
+    .pipe(gulp.dest('build/fonts'))
 });
 
 
@@ -93,7 +98,7 @@ gulp.task('clean', function(cb) {
 });
 
 
-gulp.task('build', ['styles', 'views', 'images', 'js']);
+gulp.task('build', ['styles', 'views', 'images', 'js', 'fonts']);
 
 
 gulp.task('default', ['clean'], function() {

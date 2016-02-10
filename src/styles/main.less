@@ -1,11 +1,17 @@
 @import (inline) "normalize.css/normalize.css";
 
+@font-gotham-black: GothamProBlack, Arial, sans-serif;
+@font-gotham: GothamProRegular, Arail, sans-serif;
+
 body {
   background-color: azure;
+  font: 15px OpenSansRegular, Arial, sans-serif;
+  color: #2d2d2d;
 }
 .wrapper {
   width: 990px;
   margin: 0 auto;
+  padding: 0 20px;
   position: relative;
   z-index: 1;
 }
@@ -25,23 +31,102 @@ body {
   background: url("../images/logo.png") no-repeat;
 }
 .schedule {
-  height: 710px;
+  height: 708px;
+  padding: 1px 0;
   position: relative;
-}
-.schedule:before {
-  content: '';
-  width: 100%;
-  height: 850px;
-  background: #33c273;
-  transform: skewY(-5.7deg);
-  position: absolute;
-  top: -70px;
+  color: #fff;
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 850px;
+    background: #33c273;
+    transform: skewY(-5.7deg);
+    position: absolute;
+    top: -70px;
+  }
 }
 .title {
-  color: #fff;
   text-transform: uppercase;
   font-size: 70px;
-  span {
-    font-size: 35px;
+  font-family: @font-gotham-black;
+  line-height: 0.9;
+  letter-spacing: 1px;
+  margin: 78px 0 0;
+  padding: 0;
+}
+.title-line {
+  font-size: 35px;
+}
+.date {
+  font-family: @font-gotham;
+  font-size: 35px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 33px;
+}
+.date__title {
+  font-size: 17px;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+.list {
+  font-size: 18px;
+  margin-top: 30px;
+}
+.list__item {
+  margin-top: 3px;
+}
+.grid-title {
+  font-weight: bold;
+  font-size: 18px;
+  position: relative;
+  padding: 15px 0;
+  margin-top: 42px;
+
+  &:before {
+    content: '';
+    width: 44px;
+    height: 2px;
+    background: #99e1b9;
+    position: absolute;
+    left: 0;
+    top: 0;
   }
+}
+.grid {
+  margin: 6px -16px 0;
+}
+.grid-table {
+  width: 100%;
+  border: 1px solid #fff;
+  background: rgba(255, 255, 255, .1);
+  font-size: 14px;
+  text-transform: uppercase;
+
+  td {
+    border: 1px solid #fff;
+    text-align: center;
+    padding: 16px 0;
+  }
+}
+.grid__link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.feb-schedule {
+  text-align: center;
+  margin-top: 45px;
+}
+.button {
+  display: inline-block;
+  background: #fff;
+  color: #33c273;
+  font-family: @font-gotham;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 17px 26px;
+  border-radius: 26px;
+  text-decoration: none;
 }
