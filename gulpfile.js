@@ -55,6 +55,8 @@ gulp.task('images', function() {
 });
 
 gulp.task('js', function () {
+  gulp.src('src/js/fotorama/*')
+    .pipe(gulp.dest('build/js/fotorama'));
   return gulp.src('src/js/*.js')
     .pipe(gulp.dest('build/js'));
 });

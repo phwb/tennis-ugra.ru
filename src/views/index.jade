@@ -67,6 +67,11 @@ block content
         a.button.button_white(href='#') ЗАГРУЗИТЬ ЕЩЕ
   section.section.gallery
     .wrapper
+      h2.caption.caption_gallery ГАЛЕРЕЯ турнира
+      .gallery-wrapper
+        .fotorama(data-nav='thumbs')
+          each val in [2, 2, 2, 2]
+            img(src='images/content/img' + val + '.png')
   section.section.contacts
     #map.map
     .place
@@ -129,3 +134,16 @@ block content
       });
     } ());
   script(src="./js/jquery-2.2.0.js")
+  script(src='./js/fotorama/fotorama.js')
+
+  script(src='./js/jquery.pixlayout.js')
+  script.
+    $(function () {
+      $.pixlayout({
+        src: "images/content/layout.jpg",
+        center: true,
+        clip: true,
+        show: true,
+        mini: true
+      });
+    });
